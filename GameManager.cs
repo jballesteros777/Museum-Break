@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
     public Rigidbody2D isplayer;
     
     void Update() {
-        if(Input.GetKeyDown("space")) 
+        if(Input.GetKey("space")) 
             isplayer.MovePosition(isplayer.position + Vector2.right * 10f * Time.deltaTime);
         
     }
