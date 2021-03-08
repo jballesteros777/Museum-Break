@@ -14,11 +14,11 @@ public class Flashlight : MonoBehaviour {
         else
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         
-        if(transform.position.x >= 13){
+        if(transform.position.x >= 7){
             moveLight = false;
         }
 
-        if(transform.position.x <= 6){
+        if(transform.position.x <= 0){
             moveLight = true;
         }
     }

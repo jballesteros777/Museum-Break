@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     
-    private bool isMove = true;
+    private bool isPlayer = true;
 
-    public Rigidbody2D rb;
-    
+    public Rigidbody2D isplayer;
+
     public float speed = 10f;
-   
+    
     void Update() {
-        if(!isMove){
-            rb.MovePosition(rb.position + Vector2.right * speed * Time.deltaTime);
+        if(Input.GetKey("space")) 
+            isplayer.MovePosition(isplayer.position + Vector2.right * 10f * Time.deltaTime);
         }
-    }
     
     void OnTriggerEnter2D(Collider2D col){
-        if(col.tag == "Guard") {
-            isMove = true;
-        } else if(col.tag == "Player") {
+        if(col.tag == "Player") {
+            isPlayer = false;
+        } else if(col.tag == "Light") {
             FindObjectOfType<GameManager>().EndGame();
         }
     }
