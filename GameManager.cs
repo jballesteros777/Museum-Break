@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    //public GameObject playerPrefab;
+    
     private bool gameOver = false;
 
     public Player player;
@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour {
     public Animator animator;
     public Rigidbody2D isplayer;
     
+    
     void Update() {
         if(Input.GetKey("space")) 
             isplayer.MovePosition(isplayer.position + Vector2.right * 10f * Time.deltaTime);
-        
-    }
+        }
     public void EndGame() {
         if(gameOver){
             return;
@@ -27,7 +27,4 @@ public class GameManager : MonoBehaviour {
         player.enabled = false;
     }
 
-    //public void RestartLevel(){
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //}
 }
